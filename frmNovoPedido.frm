@@ -90,7 +90,7 @@ Begin VB.Form frmNovoPedido
       TabIndex        =   7
       Top             =   1575
       Width           =   11685
-      Begin VB.TextBox txQtPedida 
+      Begin VB.TextBox txtQtPedida 
          Height          =   405
          Left            =   10920
          MaxLength       =   10
@@ -682,7 +682,7 @@ Sub CarregarPedido()
     
 End Sub
 Sub EditarCelula()
-    With Me.txQtPedida
+    With Me.txtQtPedida
         .Text = MSFlexGrid2.Text
         .Move MSFlexGrid2.Left + MSFlexGrid2.CellLeft, _
               MSFlexGrid2.Top + MSFlexGrid2.CellTop, _
@@ -694,19 +694,19 @@ Sub EditarCelula()
     End With
 End Sub
 
-Private Sub txQtPedida_GotFocus()
-    Call SelText(txQtPedida)
+Private Sub txtQtPedida_GotFocus()
+    Call SelText(txtQtPedida)
 End Sub
 
-Private Sub txQtPedida_KeyDown(KeyCode As Integer, Shift As Integer)
+Private Sub txtQtPedida_KeyDown(KeyCode As Integer, Shift As Integer)
   If KeyCode = vbKeyReturn Then
-      MSFlexGrid2.Text = txQtPedida.Text
+      MSFlexGrid2.Text = txtQtPedida.Text
       MSFlexGrid2.col = 3
-      MSFlexGrid2.Text = MSFlexGrid2.Text - txQtPedida.Text
-      txQtPedida.Visible = False
+      MSFlexGrid2.Text = MSFlexGrid2.Text - txtQtPedida.Text
+      txtQtPedida.Visible = False
       Call CriaTreeView
   ElseIf KeyCode = vbKeyEscape Then
-      txQtPedida.Visible = False
+      txtQtPedida.Visible = False
   End If
 End Sub
 
@@ -861,7 +861,7 @@ TrataErro:
 '*****
 End Sub
 
-Private Sub txQtPedida_KeyPress(KeyAscii As Integer)
+Private Sub txtQtPedida_KeyPress(KeyAscii As Integer)
     Dim separador As String
     separador = "," ' Ou "." dependendo da região
     
@@ -871,10 +871,9 @@ Private Sub txQtPedida_KeyPress(KeyAscii As Integer)
     End If
     
     ' Evita mais de uma vírgula
-    If KeyAscii = Asc(separador) And InStr(Text1.Text, separador) > 0 Then
+    If KeyAscii = Asc(separador) And InStr(txtQtPedida.Text, separador) > 0 Then
         KeyAscii = 0
     End If
-End Sub
 
 End Sub
 

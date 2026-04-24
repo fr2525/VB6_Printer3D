@@ -8,5 +8,5 @@ frmPedidos = 18, -6, 999, 529, C, 14, 25, 933, 785, C
 Frmimpressora = 0, 0, 0, 0, C, 156, 156, 798, 782, C
 frmStatus = 0, 0, 0, 0, C, 260, 260, 747, 886, C
 frmfornec = 0, 0, 0, 0, C, 130, 130, 841, 756, C
-frmNovoPedido = 105, 8, 1044, 634, , 7, 12, 872, 602, C
+frmNovoPedido = 105, 8, 1044, 634, Z, 7, 12, 872, 602, C
 frmUsuarios = 0, 0, 0, 0, C, 85, 113, 852, 739, C
