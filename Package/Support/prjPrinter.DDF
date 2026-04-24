@@ -1,0 +1,55 @@
+.OPTION EXPLICIT
+.Set Cabinet=off
+.Set Compress=off
+.Set MaxDiskSize=CDROM
+.Set ReservePerCabinetSize=6144
+.Set DiskDirectoryTemplate=".."
+.Set CompressionType=MSZIP
+.Set CompressionLevel=7
+.Set CompressionMemory=21
+.Set CabinetNameTemplate="prjPrinter.CAB"
+"Setup.Lst"
+"setup.exe"
+.Set Cabinet=on
+.Set Compress=on
+"prjPrinter.exe"
+"msvbvm60.dll"
+"OLEAUT32.DLL"
+"OLEPRO32.DLL"
+"ASYCFILT.DLL"
+"STDOLE2.TLB"
+"COMCAT.DLL"
+"msadox28.tlb"
+"msado28.tlb"
+"msstdfmt.dll"
+"msadomd28.tlb"
+"ComDlg32.OCX"
+"MSDatLst.Ocx"
+"ComCt332.ocx"
+"ComCt232.ocx"
+"comctl32.Ocx"
+"mscomct2.ocx"
+"mscomctl.OCX"
+"MSFlxGrd.ocx"
+"TabCtl32.Ocx"
+"msmask32.ocx"
+"MShflxgd.ocx"
+"THREED32.OCX"
+"MFC40.DLL"
+"MSVCRT40.DLL"
+"dao360.dll"
+"msjet40.dll"
+"msjter40.dll"
+"msjint40.dll"
+"vbajet32.dll"
+"expsrv.dll"
+"mswstr10.dll"
+"mswdat10.dll"
+"msrd2x40.dll"
+"msrd3x40.dll"
+"msrepl40.dll"
+"msjtes40.dll"
+"VB5DB.DLL"
+"SETUP1.EXE"
+"VB6STKIT.DLL"
+"ST6UNST.EXE"

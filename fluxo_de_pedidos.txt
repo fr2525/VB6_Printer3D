@@ -1,0 +1,20 @@
+Escolhe impressora 
+	-> mostra os filamentos e a quantidade de rolos disponiveis de cada filamento
+	-> escolhe o filamento e a quantidade de rolos que serão usados e baixa do estoque 
+	-> associa os filamentos aquela impressora e ve se não estoura o total de rolos da impressora
+	-> deixa a impressora com status de ocupada e associada ao pedido
+	
+Se precisar de outra impressora volta ao estagio inicial de escolha de impressora.
+
+Termina a escolha de impressoras e filamentos, grava o pedido com status "a iniciar".
+
+Status: 1-A iniciar  2-Iniciado  3-finalizado  4-entregue
+Na tela de pedidos quando for mudar a situacao (status) verificar:
+
+1 - A data entrada não pode ser menor que a data de compra
+2 - Não pode voltar a um estágio anterior, por exemplo: "iniciado" para "a iniciar" ou de "finalizado" para "iniciado" ou "a iniciar"
+3 - Gravar a data correspondente a situação entrada. Ex: se alterou para finalizado, gravar a datafinaliza 
+    e não pode ser menor que as datas anteriores (datacompra e datainicio) 
+  
+
+	
