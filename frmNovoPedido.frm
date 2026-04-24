@@ -861,6 +861,23 @@ TrataErro:
 '*****
 End Sub
 
+Private Sub txQtPedida_KeyPress(KeyAscii As Integer)
+    Dim separador As String
+    separador = "," ' Ou "." dependendo da região
+    
+    ' Permite números, backspace e a vírgula decimal
+    If Not ((KeyAscii >= 48 And KeyAscii <= 57) Or KeyAscii = 8 Or KeyAscii = Asc(separador)) Then
+        KeyAscii = 0 ' Bloqueia a tecla
+    End If
+    
+    ' Evita mais de uma vírgula
+    If KeyAscii = Asc(separador) And InStr(Text1.Text, separador) > 0 Then
+        KeyAscii = 0
+    End If
+End Sub
+
+End Sub
+
 Private Sub txtDataPedido_GotFocus()
     Call SelText(txtDataPedido)
 End Sub
