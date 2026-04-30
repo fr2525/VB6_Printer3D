@@ -92,7 +92,7 @@ Begin VB.Form frmNovoPedido
       Width           =   11685
       Begin VB.TextBox txtQtPedida 
          Height          =   405
-         Left            =   10920
+         Left            =   10950
          MaxLength       =   10
          TabIndex        =   18
          Text            =   "txqtpedida"

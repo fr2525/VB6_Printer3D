@@ -339,7 +339,7 @@ Private Sub MontaAtendimentos()
     strSql = ""
     strSql = strSql & " SELECT A.*, b.nome, c.descricao as desc_situacao FROM tb_pedidos A , TB_clientes B, tb_situacao C "
     strSql = strSql & " WHERE A.id_cliente = b.id "
-    strSql = strSql & " AND A.situacao = c.id_situacao "
+    strSql = strSql & " AND A.id_situacao = c.id_situacao "
     
     gRs.Open strSql, cnnLocal, adOpenKeyset
     If gRs.EOF Then

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFlxGrd.ocx"
 Begin VB.Form Frmfilamento 
    BackColor       =   &H00808000&
    BorderStyle     =   0  'None
@@ -7,19 +7,28 @@ Begin VB.Form Frmfilamento
    ClientHeight    =   7065
    ClientLeft      =   1605
    ClientTop       =   1635
-   ClientWidth     =   9150
+   ClientWidth     =   9915
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   7065
-   ScaleWidth      =   9150
+   ScaleWidth      =   9915
    ShowInTaskbar   =   0   'False
    Tag             =   "cadvend"
+   Begin VB.TextBox txtPeso 
+      BorderStyle     =   0  'None
+      Height          =   285
+      Left            =   6240
+      MaxLength       =   7
+      TabIndex        =   21
+      Top             =   1320
+      Width           =   720
+   End
    Begin VB.TextBox txtEstoque 
       BorderStyle     =   0  'None
       Height          =   285
-      Left            =   7770
+      Left            =   8520
       MaxLength       =   7
       TabIndex        =   5
       Top             =   1320
@@ -28,29 +37,29 @@ Begin VB.Form Frmfilamento
    Begin VB.TextBox txtPreco 
       BorderStyle     =   0  'None
       Height          =   285
-      Left            =   5520
+      Left            =   4230
       MaxLength       =   20
       TabIndex        =   4
       Top             =   1320
-      Width           =   1320
+      Width           =   1050
    End
    Begin VB.TextBox txtCor 
       BorderStyle     =   0  'None
       Height          =   285
-      Left            =   1200
+      Left            =   1110
       MaxLength       =   50
       TabIndex        =   3
       Top             =   1320
-      Width           =   3195
+      Width           =   2265
    End
    Begin VB.TextBox TxtTipo 
       BorderStyle     =   0  'None
       Height          =   285
-      Left            =   5520
+      Left            =   4980
       MaxLength       =   100
       TabIndex        =   2
       Top             =   720
-      Width           =   3165
+      Width           =   3705
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00808000&
@@ -138,7 +147,7 @@ Begin VB.Form Frmfilamento
    Begin VB.TextBox TxtMarca 
       BorderStyle     =   0  'None
       Height          =   285
-      Left            =   1200
+      Left            =   1110
       MaxLength       =   100
       TabIndex        =   1
       Top             =   720
@@ -146,18 +155,39 @@ Begin VB.Form Frmfilamento
    End
    Begin MSFlexGridLib.MSFlexGrid MSFlexFila 
       Height          =   3945
-      Left            =   495
+      Left            =   315
       TabIndex        =   13
-      Top             =   1845
-      Width           =   8175
-      _ExtentX        =   14420
+      Top             =   1830
+      Width           =   9165
+      _ExtentX        =   16166
       _ExtentY        =   6959
       _Version        =   393216
       Rows            =   5
-      Cols            =   6
+      Cols            =   7
       FixedCols       =   0
       ScrollBars      =   2
       FormatString    =   $"Frmfilamento.frx":06BC
+   End
+   Begin VB.Label Label1 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Peso:"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FFFFFF&
+      Height          =   195
+      Index           =   4
+      Left            =   5670
+      TabIndex        =   20
+      Top             =   1350
+      Width           =   495
    End
    Begin VB.Label Label10 
       BackStyle       =   0  'Transparent
@@ -194,7 +224,7 @@ Begin VB.Form Frmfilamento
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   3
-      Left            =   6975
+      Left            =   7695
       TabIndex        =   18
       Top             =   1350
       Width           =   765
@@ -215,9 +245,9 @@ Begin VB.Form Frmfilamento
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   2
-      Left            =   4935
+      Left            =   3555
       TabIndex        =   17
-      Top             =   1335
+      Top             =   1350
       Width           =   555
    End
    Begin VB.Label Label1 
@@ -236,7 +266,7 @@ Begin VB.Form Frmfilamento
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   1
-      Left            =   780
+      Left            =   660
       TabIndex        =   16
       Top             =   1320
       Width           =   360
@@ -256,7 +286,7 @@ Begin VB.Form Frmfilamento
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   195
-      Left            =   570
+      Left            =   480
       TabIndex        =   15
       Top             =   765
       Width           =   600
@@ -277,7 +307,7 @@ Begin VB.Form Frmfilamento
       ForeColor       =   &H00FFFFFF&
       Height          =   195
       Index           =   0
-      Left            =   5040
+      Left            =   4470
       TabIndex        =   14
       Top             =   780
       Width           =   450
@@ -322,7 +352,7 @@ End Sub
 
 Private Sub Carrega_Grid()
   
-  MSFlexFila.Row = 0
+  MSFlexFila.row = 0
   
   With gRs
       '.MoveLast
@@ -332,13 +362,14 @@ Private Sub Carrega_Grid()
       MSFlexFila.Rows = 1
       Do While Not .EOF
          MSFlexFila.Rows = MSFlexFila.Rows + 1
-         MSFlexFila.Row = MSFlexFila.Rows - 1
-         MSFlexFila.Col = 0: MSFlexFila.Text = f_nulo(!id, "")
-         MSFlexFila.Col = 1: MSFlexFila.Text = f_nulo(!Marca, "")
-         MSFlexFila.Col = 2: MSFlexFila.Text = f_nulo(!tipo, "")
-         MSFlexFila.Col = 3: MSFlexFila.Text = f_nulo(!cor, "")
-         MSFlexFila.Col = 4: MSFlexFila.Text = f_nulo(Format(!VALOR, "0.00"), "")
-         MSFlexFila.Col = 5: MSFlexFila.Text = f_nulo(Format(!qtde_Estoque, "0"), "")
+         MSFlexFila.row = MSFlexFila.Rows - 1
+         MSFlexFila.col = 0: MSFlexFila.Text = f_nulo(!id, "")
+         MSFlexFila.col = 1: MSFlexFila.Text = f_nulo(!Marca, "")
+         MSFlexFila.col = 2: MSFlexFila.Text = f_nulo(!tipo, "")
+         MSFlexFila.col = 3: MSFlexFila.Text = f_nulo(!cor, "")
+         MSFlexFila.col = 4: MSFlexFila.Text = f_nulo(Format(!VALOR, "0.00"), "")
+         MSFlexFila.col = 5: MSFlexFila.Text = f_nulo(Format(!peso, "0.00"), "")
+         MSFlexFila.col = 6: MSFlexFila.Text = f_nulo(Format(!qtde_Estoque, "0"), "")
          .MoveNext
          
        Loop
@@ -443,7 +474,7 @@ Private Sub cmdUpdate_Click()
       gSql = gSql & Me.TxtTipo.Text & "','" & Me.txtCor.Text & "',"
       gSql = gSql & SoNumero(Me.txtPreco.Text) & ","
       gSql = gSql & Me.txtEstoque.Text & ","
-      gSql = gSql & f_nulo(gncodoperador, 99) & ",'" & Format(Date, "yyyy-mm-dd") & "')"
+      gSql = gSql & f_nulo(gnCodOperador, 99) & ",'" & Format(Date, "yyyy-mm-dd") & "')"
       cnnLocal.Execute gSql
       lIncluir = False
       
@@ -453,7 +484,7 @@ Private Sub cmdUpdate_Click()
       gSql = gSql & "cor = '" & Me.txtCor.Text & "',"
       gSql = gSql & "valor = " & SoNumero(Me.txtPreco.Text) & ","
       gSql = gSql & "qtde_estoque = " & Val(Me.txtEstoque.Text) & ","
-      gSql = gSql & " operador = " & f_nulo(gncodoperador, 99) & ", datatual = '" & Format(Date, "yyyy-mm-dd") & "'"
+      gSql = gSql & " operador = " & f_nulo(gnCodOperador, 99) & ", datatual = '" & Format(Date, "yyyy-mm-dd") & "'"
       gSql = gSql & " WHERE id = " & Val(Lbltipovend.Caption)
       cnnLocal.Execute gSql
             
@@ -491,7 +522,7 @@ Private Sub Form_Activate()
       gSql = gSql & Me.TxtTipo.Text & "','" & Me.txtCor.Text & "',"
       gSql = gSql & f_nulo(Me.txtPreco.Text, 0) & ","
       gSql = gSql & f_nulo(Me.txtEstoque.Text, 0) & ","
-      gSql = gSql & "'" & f_nulo(gncodoperador, 99) & "','" & Format(Date, "yyyy-mm-dd") & "')"
+      gSql = gSql & "'" & f_nulo(gnCodOperador, 99) & "','" & Format(Date, "yyyy-mm-dd") & "')"
       cnnLocal.Execute gSql
          
          Abre_Le_rst
@@ -541,32 +572,32 @@ End Sub
 Private Sub MSFlexFila_Click()
 Dim oldrow As Long
   
-  oldrow = MSFlexFila.Row
+  oldrow = MSFlexFila.row
   
-  MSFlexFila.Row = 0
+  MSFlexFila.row = 0
   
   With MSFlexFila
     .Redraw = False
     Do While True
-       .Row = .Row + 1
+       .row = .row + 1
        For ix = 0 To .Cols - 1
-           .Col = ix: .CellBackColor = vbWhite
+           .col = ix: .CellBackColor = vbWhite
        Next
-       If .Row = .Rows - 1 Then
+       If .row = .Rows - 1 Then
           Exit Do
        End If
     Loop
     .Redraw = True
     
-    .Row = oldrow
+    .row = oldrow
     
-    .Col = 0:   Lbltipovend.Caption = .Text: .CellBackColor = vbYellow
-    .Col = 1:   TxtMarca.Text = .Text: .CellBackColor = vbYellow
-    .Col = 2:   TxtTipo.Text = .Text: .CellBackColor = vbYellow
-    .Col = 3:   txtCor.Text = .Text: .CellBackColor = vbYellow
-    .Col = 4:   txtPreco.Text = .Text: .CellBackColor = vbYellow
-    .Col = 5:   txtEstoque.Text = .Text: .CellBackColor = vbYellow
-    .TopRow = .Row
+    .col = 0:   Lbltipovend.Caption = .Text: .CellBackColor = vbYellow
+    .col = 1:   TxtMarca.Text = .Text: .CellBackColor = vbYellow
+    .col = 2:   TxtTipo.Text = .Text: .CellBackColor = vbYellow
+    .col = 3:   txtCor.Text = .Text: .CellBackColor = vbYellow
+    .col = 4:   txtPreco.Text = .Text: .CellBackColor = vbYellow
+    .col = 5:   txtEstoque.Text = .Text: .CellBackColor = vbYellow
+    .TopRow = .row
     
    Me.cmdUpdate.Enabled = False
    Me.cmdDesfaz.Enabled = False
