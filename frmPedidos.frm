@@ -19,29 +19,7 @@ Begin VB.Form frmPedidos
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton cmdParametros 
       BackColor       =   &H00FFFFC0&
-      Caption         =   "&Parâmetros"
-      Enabled         =   0   'False
-      BeginProperty Font 
-         Name            =   "Sitka Banner"
-         Size            =   8.25
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   945
-      Left            =   2070
-      Picture         =   "frmPedidos.frx":6758E
-      Style           =   1  'Graphical
-      TabIndex        =   16
-      Top             =   870
-      Visible         =   0   'False
-      Width           =   1110
-   End
-   Begin VB.CommandButton cmdUsuarios 
-      BackColor       =   &H00FFFFC0&
-      Caption         =   "&Usuários"
+      Caption         =   "Parametros"
       Default         =   -1  'True
       Enabled         =   0   'False
       BeginProperty Font 
@@ -54,13 +32,55 @@ Begin VB.Form frmPedidos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   945
-      Left            =   3270
-      Picture         =   "frmPedidos.frx":67810
+      Left            =   1800
+      Picture         =   "frmPedidos.frx":6758E
+      Style           =   1  'Graphical
+      TabIndex        =   17
+      Top             =   870
+      Visible         =   0   'False
+      Width           =   1020
+   End
+   Begin VB.CommandButton cmdCompras 
+      BackColor       =   &H00FFFFC0&
+      Caption         =   "Compras"
+      BeginProperty Font 
+         Name            =   "Sitka Banner"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   945
+      Left            =   8520
+      Picture         =   "frmPedidos.frx":67688
+      Style           =   1  'Graphical
+      TabIndex        =   16
+      Top             =   870
+      Width           =   975
+   End
+   Begin VB.CommandButton cmdUsuarios 
+      BackColor       =   &H00FFFFC0&
+      Caption         =   "&Usuários"
+      Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "Sitka Banner"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   945
+      Left            =   2880
+      Picture         =   "frmPedidos.frx":67F4A
       Style           =   1  'Graphical
       TabIndex        =   15
       Top             =   870
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   1020
    End
    Begin VB.Frame frmSituacao 
       BackColor       =   &H0080C0FF&
@@ -87,7 +107,7 @@ Begin VB.Form frmPedidos
          EndProperty
          Height          =   540
          Left            =   3015
-         Picture         =   "frmPedidos.frx":6790A
+         Picture         =   "frmPedidos.frx":68044
          Style           =   1  'Graphical
          TabIndex        =   14
          Top             =   675
@@ -115,7 +135,7 @@ Begin VB.Form frmPedidos
          EndProperty
          Height          =   510
          Left            =   3045
-         Picture         =   "frmPedidos.frx":67A04
+         Picture         =   "frmPedidos.frx":6813E
          Style           =   1  'Graphical
          TabIndex        =   13
          Top             =   60
@@ -154,7 +174,7 @@ Begin VB.Form frmPedidos
       EndProperty
       Height          =   945
       Left            =   10620
-      Picture         =   "frmPedidos.frx":67F36
+      Picture         =   "frmPedidos.frx":68670
       Style           =   1  'Graphical
       TabIndex        =   7
       Top             =   870
@@ -174,13 +194,13 @@ Begin VB.Form frmPedidos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   945
-      Left            =   4470
-      Picture         =   "frmPedidos.frx":68030
+      Left            =   3960
+      Picture         =   "frmPedidos.frx":6876A
       Style           =   1  'Graphical
       TabIndex        =   6
       Top             =   870
       Visible         =   0   'False
-      Width           =   1110
+      Width           =   975
    End
    Begin VB.CommandButton cmdImpressoras 
       BackColor       =   &H00FFFFC0&
@@ -195,12 +215,12 @@ Begin VB.Form frmPedidos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   945
-      Left            =   9240
-      Picture         =   "frmPedidos.frx":6812A
+      Left            =   9570
+      Picture         =   "frmPedidos.frx":68864
       Style           =   1  'Graphical
       TabIndex        =   5
       Top             =   870
-      Width           =   1110
+      Width           =   975
    End
    Begin VB.CommandButton cmdFilamentos 
       BackColor       =   &H00FFFFC0&
@@ -215,12 +235,12 @@ Begin VB.Form frmPedidos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   945
-      Left            =   8040
-      Picture         =   "frmPedidos.frx":68D6C
+      Left            =   7470
+      Picture         =   "frmPedidos.frx":694A6
       Style           =   1  'Graphical
       TabIndex        =   4
       Top             =   870
-      Width           =   1110
+      Width           =   975
    End
    Begin VB.CommandButton cmdFornece 
       BackColor       =   &H00FFFFC0&
@@ -235,12 +255,12 @@ Begin VB.Form frmPedidos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   945
-      Left            =   6870
-      Picture         =   "frmPedidos.frx":699AE
+      Left            =   6420
+      Picture         =   "frmPedidos.frx":6A0E8
       Style           =   1  'Graphical
       TabIndex        =   3
       Top             =   870
-      Width           =   1110
+      Width           =   975
    End
    Begin VB.CommandButton cmdClientes 
       BackColor       =   &H00FFFFC0&
@@ -255,12 +275,12 @@ Begin VB.Form frmPedidos
          Strikethrough   =   0   'False
       EndProperty
       Height          =   945
-      Left            =   5670
-      Picture         =   "frmPedidos.frx":6A5F0
+      Left            =   5370
+      Picture         =   "frmPedidos.frx":6AD2A
       Style           =   1  'Graphical
       TabIndex        =   2
       Top             =   870
-      Width           =   1110
+      Width           =   975
    End
    Begin VB.CommandButton cmdNovoPed 
       BackColor       =   &H00C0FFC0&
@@ -276,11 +296,11 @@ Begin VB.Form frmPedidos
       EndProperty
       Height          =   945
       Left            =   120
-      Picture         =   "frmPedidos.frx":6AEFA
+      Picture         =   "frmPedidos.frx":6B634
       Style           =   1  'Graphical
       TabIndex        =   1
       Top             =   870
-      Width           =   1200
+      Width           =   1020
    End
    Begin MSFlexGridLib.MSFlexGrid MSFlexPedidos 
       Height          =   5355
@@ -295,7 +315,7 @@ Begin VB.Form frmPedidos
       Rows            =   5
       Cols            =   10
       FixedCols       =   0
-      FormatString    =   $"frmPedidos.frx":6AFE4
+      FormatString    =   $"frmPedidos.frx":6B71E
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
@@ -370,7 +390,7 @@ Private Sub MontaAtendimentos()
               .Rows = .Rows + 1
               .row = .Rows - 1
         
-              .col = 0: .Text = f_nulo(gRs!nome, "")
+              .col = 0: .Text = f_nulo(gRs!Nome, "")
               .col = 1: .Text = f_nulo(gRs!descricao, "")
               .col = 2: .Text = f_nulo(Format(gRs!total_venda, "0.00"), "")
               .col = 3: .Text = f_nulo(gRs!desc_situacao, "")
@@ -415,6 +435,10 @@ Private Sub cmdClientes_Click()
     FrmClientes.Show vbModal
 End Sub
 
+Private Sub cmdCompras_Click()
+    FrmEntradas.Show vbModal
+End Sub
+
 Private Sub cmdFilamentos_Click()
     Frmfilamento.Show vbModal
 End Sub
@@ -435,7 +459,6 @@ End Sub
 
 Private Sub cmdParametros_Click()
     frmlojas.Show vbModal
-    
 End Sub
 
 Private Sub CmdSair_Click()
@@ -489,7 +512,7 @@ Private Sub Form_Load()
       gcUsuario = "Master"
    Else
       gnNivel = gRs!nivel
-      gcUsuario = gRs!nome
+      gcUsuario = gRs!Nome
    End If
 
    If gRs.State = adStateOpen Then

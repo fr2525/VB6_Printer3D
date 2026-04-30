@@ -1,10 +1,10 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFlxGrd.ocx"
 Begin VB.Form frmfornec 
    BackColor       =   &H00808000&
    BorderStyle     =   0  'None
    Caption         =   "Fornecedores"
-   ClientHeight    =   6135
+   ClientHeight    =   7050
    ClientLeft      =   2625
    ClientTop       =   510
    ClientWidth     =   7395
@@ -12,38 +12,68 @@ Begin VB.Form frmfornec
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6135
+   ScaleHeight     =   7050
    ScaleWidth      =   7395
    ShowInTaskbar   =   0   'False
    Tag             =   "cadvend"
+   Begin VB.ComboBox Combo1 
+      Height          =   315
+      ItemData        =   "frmfornece.frx":0000
+      Left            =   1590
+      List            =   "frmfornece.frx":0055
+      TabIndex        =   27
+      Top             =   2940
+      Width           =   645
+   End
+   Begin VB.TextBox Text1 
+      Height          =   285
+      Left            =   5670
+      TabIndex        =   24
+      Top             =   2940
+      Width           =   1110
+   End
+   Begin VB.TextBox txtCidade 
+      Height          =   285
+      Left            =   1590
+      TabIndex        =   22
+      Top             =   2460
+      Width           =   5220
+   End
+   Begin VB.TextBox txtBairro 
+      Height          =   285
+      Left            =   1590
+      TabIndex        =   20
+      Top             =   1980
+      Width           =   5220
+   End
    Begin VB.TextBox txtCpfCnpj 
       Height          =   285
       Left            =   1620
       TabIndex        =   1
-      Top             =   960
+      Top             =   630
       Width           =   2055
    End
    Begin VB.TextBox txtEmail 
       Height          =   285
       Left            =   1605
       TabIndex        =   5
-      Top             =   2430
+      Top             =   3420
       Width           =   5220
    End
    Begin MSFlexGridLib.MSFlexGrid MSFlexGrid1 
-      Height          =   2025
+      Height          =   1935
       Left            =   180
       TabIndex        =   11
-      Top             =   2970
-      Width           =   6675
-      _ExtentX        =   11774
-      _ExtentY        =   3572
+      Top             =   3900
+      Width           =   7005
+      _ExtentX        =   12356
+      _ExtentY        =   3413
       _Version        =   393216
       Rows            =   5
       Cols            =   6
       FixedCols       =   0
       Appearance      =   0
-      FormatString    =   $"frmfornece.frx":0000
+      FormatString    =   $"frmfornece.frx":00C5
    End
    Begin VB.Frame Frame1 
       BackColor       =   &H00808000&
@@ -51,7 +81,7 @@ Begin VB.Form frmfornec
       Height          =   795
       Left            =   1470
       TabIndex        =   10
-      Top             =   5070
+      Top             =   5970
       Width           =   4245
       Begin VB.CommandButton cmdUpdate 
          BackColor       =   &H00FFFFFF&
@@ -59,7 +89,7 @@ Begin VB.Form frmfornec
          Enabled         =   0   'False
          Height          =   540
          Left            =   2190
-         Picture         =   "frmfornece.frx":00B4
+         Picture         =   "frmfornece.frx":0179
          Style           =   1  'Graphical
          TabIndex        =   8
          Tag             =   "&Update"
@@ -71,7 +101,7 @@ Begin VB.Form frmfornec
          Caption         =   "&Editar"
          Height          =   540
          Left            =   780
-         Picture         =   "frmfornece.frx":01AE
+         Picture         =   "frmfornece.frx":0273
          Style           =   1  'Graphical
          TabIndex        =   16
          Tag             =   "&Refresh"
@@ -83,7 +113,7 @@ Begin VB.Form frmfornec
          Caption         =   "&Excluir"
          Height          =   540
          Left            =   1500
-         Picture         =   "frmfornece.frx":0320
+         Picture         =   "frmfornece.frx":03E5
          Style           =   1  'Graphical
          TabIndex        =   15
          Tag             =   "&Delete"
@@ -95,7 +125,7 @@ Begin VB.Form frmfornec
          Caption         =   "&Incluir"
          Height          =   540
          Left            =   120
-         Picture         =   "frmfornece.frx":0492
+         Picture         =   "frmfornece.frx":0557
          Style           =   1  'Graphical
          TabIndex        =   14
          Tag             =   "&Add"
@@ -107,7 +137,7 @@ Begin VB.Form frmfornec
          Caption         =   "&Sair"
          Height          =   540
          Left            =   3540
-         Picture         =   "frmfornece.frx":057C
+         Picture         =   "frmfornece.frx":0641
          Style           =   1  'Graphical
          TabIndex        =   13
          Tag             =   "&Update"
@@ -120,7 +150,7 @@ Begin VB.Form frmfornec
          Enabled         =   0   'False
          Height          =   540
          Left            =   2880
-         Picture         =   "frmfornece.frx":0676
+         Picture         =   "frmfornece.frx":073B
          Style           =   1  'Graphical
          TabIndex        =   12
          Tag             =   "&Update"
@@ -132,22 +162,78 @@ Begin VB.Form frmfornec
       Height          =   285
       Left            =   5265
       TabIndex        =   2
-      Top             =   990
+      Top             =   660
       Width           =   1560
    End
    Begin VB.TextBox TxtEndereco 
       Height          =   285
       Left            =   1605
       TabIndex        =   4
-      Top             =   1935
+      Top             =   1515
       Width           =   5220
    End
    Begin VB.TextBox TxtNome 
       Height          =   285
       Left            =   1605
       TabIndex        =   3
-      Top             =   1410
+      Top             =   1080
       Width           =   5220
+   End
+   Begin VB.Label lblLabels 
+      Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Estado:"
+      ForeColor       =   &H00FFFFFF&
+      Height          =   195
+      Index           =   6
+      Left            =   930
+      TabIndex        =   26
+      Tag             =   "NOME:"
+      Top             =   3000
+      Width           =   540
+   End
+   Begin VB.Label lblLabels 
+      Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Cep:"
+      ForeColor       =   &H00FFFFFF&
+      Height          =   195
+      Index           =   5
+      Left            =   5250
+      TabIndex        =   25
+      Tag             =   "NOME:"
+      Top             =   2970
+      Width           =   330
+   End
+   Begin VB.Label lblLabels 
+      Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Cidade:"
+      ForeColor       =   &H00FFFFFF&
+      Height          =   195
+      Index           =   4
+      Left            =   930
+      TabIndex        =   23
+      Tag             =   "NOME:"
+      Top             =   2490
+      Width           =   540
+   End
+   Begin VB.Label lblLabels 
+      Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Bairro:"
+      ForeColor       =   &H00FFFFFF&
+      Height          =   195
+      Index           =   3
+      Left            =   1035
+      TabIndex        =   21
+      Tag             =   "NOME:"
+      Top             =   2010
+      Width           =   450
    End
    Begin VB.Label Label10 
       BackStyle       =   0  'Transparent
@@ -163,9 +249,9 @@ Begin VB.Form frmfornec
       EndProperty
       ForeColor       =   &H00C0FFFF&
       Height          =   435
-      Left            =   1155
+      Left            =   1575
       TabIndex        =   19
-      Top             =   195
+      Top             =   60
       Width           =   4395
    End
    Begin VB.Label lblLabels 
@@ -179,7 +265,7 @@ Begin VB.Form frmfornec
       Left            =   1035
       TabIndex        =   18
       Tag             =   "NOME:"
-      Top             =   2460
+      Top             =   3450
       Width           =   450
    End
    Begin VB.Label Label2 
@@ -190,7 +276,7 @@ Begin VB.Form frmfornec
       Height          =   195
       Left            =   660
       TabIndex        =   17
-      Top             =   1020
+      Top             =   690
       Width           =   825
    End
    Begin VB.Label LblCelular 
@@ -201,7 +287,7 @@ Begin VB.Form frmfornec
       Height          =   195
       Left            =   4515
       TabIndex        =   9
-      Top             =   1020
+      Top             =   690
       Width           =   525
    End
    Begin VB.Label lblLabels 
@@ -215,7 +301,7 @@ Begin VB.Form frmfornec
       Left            =   750
       TabIndex        =   7
       Tag             =   "NOME:"
-      Top             =   1935
+      Top             =   1515
       Width           =   735
    End
    Begin VB.Label LblCodfor 
@@ -225,7 +311,7 @@ Begin VB.Form frmfornec
       Height          =   210
       Left            =   165
       TabIndex        =   0
-      Top             =   1035
+      Top             =   885
       Width           =   390
    End
    Begin VB.Label lblLabels 
@@ -239,7 +325,7 @@ Begin VB.Form frmfornec
       Left            =   1020
       TabIndex        =   6
       Tag             =   "NOME:"
-      Top             =   1470
+      Top             =   1140
       Width           =   465
    End
 End
@@ -402,7 +488,7 @@ Private Sub Form_Load()
          'rst.AddNew
          With gRs
            .AddNew
-           !nome = ""
+           !Nome = ""
            .Update
          End With
          cmdEditar_Click
@@ -436,38 +522,38 @@ Private Sub MSFlexGrid1_Click()
  Dim oldrow As Long
  Dim lcColGrid As Double
 
-  If MSFlexGrid1.Row = 1 Then
-     lcColGrid = MSFlexGrid1.Col
-     MSFlexGrid1.Col = lcColGrid
+  If MSFlexGrid1.row = 1 Then
+     lcColGrid = MSFlexGrid1.col
+     MSFlexGrid1.col = lcColGrid
      MSFlexGrid1.Sort = flexSortStringAscending
   End If
    
-  oldrow = MSFlexGrid1.Row
+  oldrow = MSFlexGrid1.row
   
-  MSFlexGrid1.Row = 0
+  MSFlexGrid1.row = 0
   
   With MSFlexGrid1
     .Redraw = False
     Do While True
-       .Row = .Row + 1
+       .row = .row + 1
        For ix = 0 To .Cols - 1
-           .Col = ix: .CellBackColor = vbWhite
+           .col = ix: .CellBackColor = vbWhite
        Next
-       If .Row = .Rows - 1 Then
+       If .row = .Rows - 1 Then
           Exit Do
        End If
     Loop
     .Redraw = True
     
-    .Row = oldrow
+    .row = oldrow
     
-    .Col = 0:   LblCodfor.Caption = .Text: .CellBackColor = vbYellow
-    .Col = 1:   txtNome.Text = .Text: .CellBackColor = vbYellow
-    .Col = 2:   txtCelular.Text = .Text: .CellBackColor = vbYellow
-    .Col = 3:   TXTeMAIL.Text = .Text: .CellBackColor = vbYellow
-    .Col = 4:   txtCpfCnpj.Text = .Text: .CellBackColor = vbYellow
-    .Col = 5:   TxtEndereco.Text = .Text: .CellBackColor = vbYellow
-    .TopRow = .Row
+    .col = 0:   LblCodfor.Caption = .Text: .CellBackColor = vbYellow
+    .col = 1:   txtNome.Text = .Text: .CellBackColor = vbYellow
+    .col = 2:   txtCelular.Text = .Text: .CellBackColor = vbYellow
+    .col = 3:   TXTeMAIL.Text = .Text: .CellBackColor = vbYellow
+    .col = 4:   txtCpfCnpj.Text = .Text: .CellBackColor = vbYellow
+    .col = 5:   TxtEndereco.Text = .Text: .CellBackColor = vbYellow
+    .TopRow = .row
     
 End With
      
@@ -499,7 +585,7 @@ End Sub
 Private Sub Carrega_Grid()
 
 'Teste do MsHFlexgrid1 - eh eh eh
-  MSFlexGrid1.Row = 0
+  MSFlexGrid1.row = 0
   
   With gRs
       '.MoveLast
@@ -512,13 +598,13 @@ Private Sub Carrega_Grid()
       
       Do While Not .EOF
          MSFlexGrid1.Rows = MSFlexGrid1.Rows + 1
-         MSFlexGrid1.Row = MSFlexGrid1.Rows - 1
-         MSFlexGrid1.Col = 0:  MSFlexGrid1.Text = f_nulo(!id, "")
-         MSFlexGrid1.Col = 1:  MSFlexGrid1.Text = f_nulo(!nome, "")
-         MSFlexGrid1.Col = 2:  MSFlexGrid1.Text = f_nulo(!celular, "")
-         MSFlexGrid1.Col = 3:  MSFlexGrid1.Text = f_nulo(!email, "")
-         MSFlexGrid1.Col = 4:  MSFlexGrid1.Text = f_nulo(!cpf_CNPJ, "")
-         MSFlexGrid1.Col = 5:  MSFlexGrid1.Text = f_nulo(!endereco, "")
+         MSFlexGrid1.row = MSFlexGrid1.Rows - 1
+         MSFlexGrid1.col = 0:  MSFlexGrid1.Text = f_nulo(!id, "")
+         MSFlexGrid1.col = 1:  MSFlexGrid1.Text = f_nulo(!Nome, "")
+         MSFlexGrid1.col = 2:  MSFlexGrid1.Text = f_nulo(!celular, "")
+         MSFlexGrid1.col = 3:  MSFlexGrid1.Text = f_nulo(!email, "")
+         MSFlexGrid1.col = 4:  MSFlexGrid1.Text = f_nulo(!cpf_CNPJ, "")
+         MSFlexGrid1.col = 5:  MSFlexGrid1.Text = f_nulo(!endereco, "")
          .MoveNext
          
        Loop
